@@ -25,6 +25,10 @@ public class LivingThing {
         this.hitPoint = nextHitPoint;
     }
 
+    public int getAttack(){
+        return this.attack;
+    }
+
     public boolean isDead(){
         return this.dead;
     }
@@ -52,8 +56,8 @@ public class LivingThing {
      * @param damage 受けたダメージ
      */
     public void wounded(int damage){
-        hitPoint -= damage;
-        if( hitPoint <= 0 ) {
+        this.hitPoint -= damage;
+        if( this.hitPoint <= 0 ) {
             this.dead = true;
             System.out.printf("%sは倒れた。\n", name);
         }
